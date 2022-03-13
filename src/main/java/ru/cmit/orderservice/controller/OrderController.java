@@ -1,6 +1,7 @@
 package ru.cmit.orderservice.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,14 +10,19 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.cmit.orderservice.controller.dto.OrderCreateRequest;
+import ru.cmit.orderservice.controller.dto.OrderResponse;
 import ru.cmit.orderservice.entity.OrderEntity;
-import ru.cmit.orderservice.service.OrderService;
+import ru.cmit.orderservice.service.api.OrderService;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Positive;
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/order")
+@Validated
 public class OrderController {
 
     private final OrderService orderService;
@@ -27,13 +33,13 @@ public class OrderController {
     }
 
     @PostMapping("/create")
-    public OrderEntity savedOrder(@RequestBody OrderEntity order) {
-        return orderService.createOrder(order);
+    public OrderResponse savedOrder(@RequestBody @Valid OrderCreateRequest createRequest) {
+        return orderService.createOrder(createRequest);
     }
 
     @GetMapping("/id/{id}")
-    public OrderEntity getOrderById(@PathVariable Long id) {
-        return orderService.getOrderById(id);
+    public OrderEntity getOrderById(@PathVariable @Positive Long id) {
+        return orderService.getOrderEntityById(id);
     }
 
     @GetMapping("/user/{username}")
