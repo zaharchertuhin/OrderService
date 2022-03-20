@@ -51,10 +51,10 @@ public class OrderController {
     public void deleteOrderById(@PathVariable Long id) {
         orderService.deleteOrderById(id);
     }
-
-    @PutMapping("/update/{id}")
-    public OrderEntity updateOrder(@PathVariable Long id,
-                                   @RequestBody OrderEntity order) {
-        return orderService.updateOrder(id, order);
-    }
+//
+//    @PutMapping("/update/{id}")
+//    public OrderEntity updateOrder(@PathVariable Long id,
+//                                   @RequestBody OrderEntity order) {
+//        return orderService.updateOrder(id, order);
+//    }
 }

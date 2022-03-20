@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.cmit.orderservice.controller.dto.OrderCreateRequest;
 import ru.cmit.orderservice.controller.dto.OrderResponse;
+import ru.cmit.orderservice.controller.dto.OrderUpdateRequest;
 import ru.cmit.orderservice.entity.OrderEntity;
 import ru.cmit.orderservice.mapper.OrderMapper;
 import ru.cmit.orderservice.repository.OrderRepository;
@@ -54,13 +55,9 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public OrderEntity updateOrder(@NonNull Long id,
-                                   @NonNull OrderEntity order) {
-        OrderEntity orderFromDB = getOrderEntityById(id);
-
-        orderFromDB.setDescription(order.getDescription());
-        orderFromDB.setUsername(order.getUsername());
-
-        return orderRepository.save(orderFromDB);
+    public OrderResponse updateOrder(@NonNull Long id,
+                                     @NonNull OrderUpdateRequest updateRequest) {
+        OrderEntity orderForUpdate = orderMapper.toEntity(id, updateRequest);
+        return orderMapper.toOrderResponse(orderRepository.save(orderForUpdate));
     }
 }
