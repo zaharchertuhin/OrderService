@@ -8,6 +8,8 @@ import ru.cmit.orderservice.controller.dto.OrderResponse;
 import ru.cmit.orderservice.controller.dto.OrderUpdateRequest;
 import ru.cmit.orderservice.entity.OrderEntity;
 
+import java.util.List;
+
 @Mapper(config = MappersConfig.class)
 public interface OrderMapper {
 
@@ -17,4 +19,7 @@ public interface OrderMapper {
     OrderEntity toEntity(OrderCreateRequest orderCreateRequest);
 
     OrderEntity toEntity(Long id, OrderUpdateRequest orderUpdateRequest);
+
+
+    List<OrderResponse> toListOrderResponse(List<OrderEntity> list);
 }

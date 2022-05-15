@@ -28,7 +28,7 @@ public class OrderController {
     private final OrderService orderService;
 
     @GetMapping("/all")
-    public List<OrderEntity> getAllOrders() {
+    public List<OrderResponse> getAllOrders() {
         return orderService.getAllOrders();
     }
 
@@ -38,12 +38,12 @@ public class OrderController {
     }
 
     @GetMapping("/id/{id}")
-    public OrderEntity getOrderById(@PathVariable @Positive Long id) {
-        return orderService.getOrderEntityById(id);
+    public OrderResponse getOrderById(@PathVariable @Positive Long id) {
+        return orderService.getOrderById(id);
     }
 
     @GetMapping("/user/{username}")
-    public List<OrderEntity> getOrdersByUsername(@PathVariable String username) {
+    public List<OrderResponse> getOrdersByUsername(@PathVariable String username) {
         return orderService.getOrdersByUsername(username);
     }
 

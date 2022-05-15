@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class OrderServiceImpl implements OrderService {
+public class    OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
     private final OrderMapper orderMapper;
@@ -40,13 +40,15 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<OrderEntity> getAllOrders() {
-        return orderRepository.findAll();
+    public List<OrderResponse> getAllOrders() {
+        List<OrderEntity> list = orderRepository.findAll();
+        return orderMapper.toListOrderResponse(list);
     }
 
     @Override
-    public List<OrderEntity> getOrdersByUsername(@NonNull String username) {
-        return orderRepository.findAllByUsername(username);
+    public List<OrderResponse> getOrdersByUsername(@NonNull String username) {
+        List<OrderEntity> all = orderRepository.findAllByUsername(username);
+        return orderMapper.toListOrderResponse(all);
     }
 
     @Override

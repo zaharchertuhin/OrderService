@@ -15,9 +15,9 @@ public interface OrderService {
 
     OrderResponse getOrderById(@NonNull Long id);
 
-    List<OrderEntity> getAllOrders();
+    List<OrderResponse> getAllOrders();
 
-    List<OrderEntity> getOrdersByUsername(@NonNull String username);
+    List<OrderResponse> getOrdersByUsername(@NonNull String username);
 
     void deleteOrderById(@NonNull Long id);
 
