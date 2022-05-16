@@ -19,7 +19,6 @@
 		<spring-boot-starter-validation.version>2.6.4</spring-boot-starter-validation.version>
 		<mapstruct-processor.version>1.4.2.Final</mapstruct-processor.version>
 		<mapstruct.version>1.4.2.Final</mapstruct.version>
-		<liquibase-core.version>4.10.0</liquibase-core.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -84,11 +83,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-core</artifactId>
-			<version>${liquibase-core.version}</version>
-		</dependency>
+
 	</dependencies>
 
 	<build>
