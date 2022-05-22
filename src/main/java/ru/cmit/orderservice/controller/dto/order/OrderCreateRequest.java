@@ -1,4 +1,4 @@
-package ru.cmit.orderservice.controller.dto;
+package ru.cmit.orderservice.controller.dto.order;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

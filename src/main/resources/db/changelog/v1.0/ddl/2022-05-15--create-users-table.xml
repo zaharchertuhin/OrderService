@@ -13,9 +13,14 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
 
+            <column name="login" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+
             <column name="name" type="varchar">
                 <constraints nullable="false"/>
             </column>
+
 
             <column name="surname" type="varchar">
                 <constraints nullable="false"/>

@@ -1,4 +1,4 @@
-package ru.cmit.orderservice.controller.dto;
+package ru.cmit.orderservice.controller.dto.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

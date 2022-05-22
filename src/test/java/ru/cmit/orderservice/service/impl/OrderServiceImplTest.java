@@ -1,22 +1,18 @@
 package ru.cmit.orderservice.service.impl;
 
-import org.h2.engine.User;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import ru.cmit.orderservice.controller.dto.OrderCreateRequest;
-import ru.cmit.orderservice.controller.dto.OrderResponse;
-import ru.cmit.orderservice.controller.dto.OrderUpdateRequest;
+import ru.cmit.orderservice.controller.dto.order.OrderCreateRequest;
+import ru.cmit.orderservice.controller.dto.order.OrderResponse;
+import ru.cmit.orderservice.controller.dto.order.OrderUpdateRequest;
 import ru.cmit.orderservice.entity.OrderEntity;
 import ru.cmit.orderservice.repository.OrderRepository;
 import ru.cmit.orderservice.service.api.OrderService;
 
-import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -33,6 +29,8 @@ class OrderServiceImplTest {
 
     public static final String DESCRIPTION ="test-order";
     public static final String USERNAME = "test-user";
+
+
 
     public Long id = null;
 

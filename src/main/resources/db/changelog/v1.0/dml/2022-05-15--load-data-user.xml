@@ -13,6 +13,11 @@
                   relativeToChangelogFile="true"
                   tableName="users"
                   usePreparedStatements="true">
+
+            <column header="login"
+                    name="login"
+                    type="VARCHAR"/>
+
             <column header="name"
                     name="name"
                     type="VARCHAR"/>
