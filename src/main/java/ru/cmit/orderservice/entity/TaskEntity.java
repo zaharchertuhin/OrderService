@@ -10,28 +10,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.util.List;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "orders")
+
+@Table(name = "Tasks")
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderEntity {
+public class TaskEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "list_of_task", nullable = false)
-    private String list_of_task;
+    @Column(name = "task_body", nullable = false)
+    private String taskBody;
 
-    @Column(name = "user_name", nullable = false)
-    private String username;
+    @Column(name = "answer", nullable = false)
+    private String answer;
 
-    @Column(name = "subject", nullable = false)
-    private String subject;
+
+
 }

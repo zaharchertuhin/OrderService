@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.cmit.orderservice.controller.dto.order.TaskCreateRequest;
 import ru.cmit.orderservice.controller.dto.order.TaskResponse;
+import ru.cmit.orderservice.entity.OrderEntity;
 import ru.cmit.orderservice.entity.TaskEntity;
 import ru.cmit.orderservice.service.api.OrderService;
 
@@ -41,6 +42,8 @@ public class OrderController {
         return orderService.getOrderById(id);
     }
 
+    @GetMapping("/list/{id}")
+    public OrderEntity getTasksList(@PathVariable @Positive Long id){return  orderService.getListById(id);}
 
     @DeleteMapping("/delete/{id}")
     public void deleteOrderById(@PathVariable Long id) {

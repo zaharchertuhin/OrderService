@@ -8,20 +8,16 @@
 
     <changeSet author="David_Rezcov" id="2022-05-15--create-orders-table.xml">
 
-        <createTable schemaName="public" tableName="orders">
+        <createTable schemaName="public" tableName="tasks">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
 
-            <column name="list_of_task" type="varchar" >
+            <column name="task_body" type="varchar">
                 <constraints nullable="false"/>
             </column>
 
-            <column name="user_name" type="varchar">
-                <constraints nullable="false"/>
-            </column>
-
-            <column name="subject" type="varchar">
+            <column name="answer" type="varchar">
                 <constraints nullable="false"/>
             </column>
         </createTable>

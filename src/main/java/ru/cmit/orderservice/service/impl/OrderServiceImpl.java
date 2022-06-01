@@ -6,8 +6,10 @@ import org.springframework.stereotype.Service;
 import ru.cmit.orderservice.controller.dto.order.TaskCreateRequest;
 import ru.cmit.orderservice.controller.dto.order.TaskResponse;
 import ru.cmit.orderservice.controller.dto.order.TaskUpdateRequest;
+import ru.cmit.orderservice.entity.OrderEntity;
 import ru.cmit.orderservice.entity.TaskEntity;
 import ru.cmit.orderservice.mapper.OrderMapper;
+import ru.cmit.orderservice.repository.ListRepositoty;
 import ru.cmit.orderservice.repository.OrderRepository;
 import ru.cmit.orderservice.service.api.OrderService;
 
@@ -18,6 +20,7 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
+    private final ListRepositoty listRepositoty;
     private final OrderMapper orderMapper;
 
     @Override
@@ -38,11 +41,15 @@ public class OrderServiceImpl implements OrderService {
         return orderRepository.findAll();
     }
 
-
-
     @Override
     public void deleteOrderById(@NonNull Long id) {
         orderRepository.deleteById(id);
+    }
+
+    @Override
+    public OrderEntity getListById(Long id) {
+        return listRepositoty.findById(id).orElseThrow(
+                () -> new RuntimeException("List with id : " + id + " not found"));
     }
 
 }

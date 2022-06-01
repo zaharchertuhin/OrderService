@@ -6,21 +6,18 @@
                       https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd"
         objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
     <changeSet author="David_Rezcov" id="2021-09-14--load-data-order">
-        <loadData catalogName="OrderData"
+        <loadData catalogName="TaskData"
                   commentLineStartsWith="//"
-                  file="data/order-data.csv"
+                  file="data/tasks-data.csv"
                   quotchar="'"
                   relativeToChangelogFile="true"
-                  tableName="orders"
+                  tableName="tasks"
                   usePreparedStatements="true">
-            <column header="list_of_task"
-                    name="list_of_task"
-                    type="varchar" />
-            <column header="user_name"
-                    name="user_name"
+            <column header="task_body"
+                    name="task_body"
                     type="VARCHAR"/>
-            <column header="subject"
-                    name="subject"
+            <column header="answer"
+                    name="answer"
                     type="VARCHAR"/>
         </loadData>
     </changeSet>
