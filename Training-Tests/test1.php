@@ -90,9 +90,7 @@ $data = json_decode($responce, true);
 curl_close($ch);
 
 $array = str_split($data['list_of_task']);
-print_r($array);
 
-print_r($get);
 ?>
 
 
