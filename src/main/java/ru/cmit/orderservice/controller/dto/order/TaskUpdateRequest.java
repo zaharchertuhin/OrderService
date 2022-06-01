@@ -10,13 +10,9 @@ import javax.validation.constraints.NotBlank;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderCreateRequest {
-
+public class TaskUpdateRequest {
     @JsonProperty(required = true)
     @NotBlank
-    private String description;
+    private String taskBody;
 
-    @JsonProperty(required = true)
-    @NotBlank
-    private String username;
 }

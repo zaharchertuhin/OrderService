@@ -7,11 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderResponse {
+public class TaskResponse {
 
     private Long id;
 
-    private String username;
-
-    private String description;
+    private String taskBody;
 }

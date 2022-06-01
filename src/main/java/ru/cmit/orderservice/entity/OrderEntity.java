@@ -11,7 +11,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Getter
@@ -25,9 +27,12 @@ public class OrderEntity {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "description", nullable = false)
-    private String description;
+    @OneToMany(mappedBy="id")
+    private List<TaskEntity> listOfTask;
 
     @Column(name = "user_name", nullable = false)
     private String username;
+
+    @Column(name = "subject", nullable = false)
+    private String subject;
 }

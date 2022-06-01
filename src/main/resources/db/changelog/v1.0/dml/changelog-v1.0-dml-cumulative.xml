@@ -10,6 +10,6 @@
     </changeSet>
 
     <include file="db/changelog/v1.0/dml/2022-05-15--load-data-order.xml"/>
-    <include file="db/changelog/v1.0/dml/2022-05-15--load-data-user.xml"/>
+    <include file="db/changelog/v1.0/dml/2022-05-15--load-data-task.xml"/>
 
 </databaseChangeLog>

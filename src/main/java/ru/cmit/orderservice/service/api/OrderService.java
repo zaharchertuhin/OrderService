@@ -1,26 +1,23 @@
 package ru.cmit.orderservice.service.api;
 
 import lombok.NonNull;
-import ru.cmit.orderservice.controller.dto.order.OrderCreateRequest;
-import ru.cmit.orderservice.controller.dto.order.OrderResponse;
-import ru.cmit.orderservice.controller.dto.order.OrderUpdateRequest;
-import ru.cmit.orderservice.entity.OrderEntity;
+import ru.cmit.orderservice.controller.dto.order.TaskCreateRequest;
+import ru.cmit.orderservice.controller.dto.order.TaskResponse;
+import ru.cmit.orderservice.controller.dto.order.TaskUpdateRequest;
+import ru.cmit.orderservice.entity.TaskEntity;
 
 import java.util.List;
 
 public interface OrderService {
-    OrderResponse createOrder(@NonNull OrderCreateRequest createRequest);
 
-    OrderEntity getOrderEntityById(@NonNull Long id);
 
-    OrderResponse getOrderById(@NonNull Long id);
+    TaskEntity getOrderEntityById(@NonNull Long id);
 
-    List<OrderResponse> getAllOrders();
+    TaskResponse getOrderById(@NonNull Long id);
 
-    List<OrderResponse> getOrdersByUsername(@NonNull String username);
+    List<TaskEntity> getAllOrders();
 
     void deleteOrderById(@NonNull Long id);
 
-    OrderResponse updateOrder(@NonNull Long id,
-                              @NonNull OrderUpdateRequest updateRequest);
+
 }

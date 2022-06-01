@@ -13,11 +13,11 @@
                   relativeToChangelogFile="true"
                   tableName="orders"
                   usePreparedStatements="true">
-            <column header="description"
-                    name="description"
-                    type="VARCHAR"/>
-            <column header="username"
+            <column header="user_name"
                     name="user_name"
+                    type="VARCHAR"/>
+            <column header="subject"
+                    name="subject"
                     type="VARCHAR"/>
         </loadData>
     </changeSet>
